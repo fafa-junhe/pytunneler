@@ -1,8 +1,7 @@
 import asyncio
 import logging
 import socket
-
-from websockets import WebSocketCommonProtocol, WebSocketServerProtocol
+from picows import WSTransport, WSMsgType
 BUFFER = 8192
 
 
@@ -11,7 +10,6 @@ def tcp_recv(client_socket):
         data = client_socket.recv(BUFFER)
         if not data:
             return None
-        data = data.replace(b"127.0.0.1:99", b"afdian.com")
         logging.debug("TCP server received: " + str(data))
         return data
     except Exception as e:
@@ -26,19 +24,11 @@ def tcp_send(client_socket, data):
         return False
     return True
 
-def websocket_send(loop, websocket, data):
+def websocket_send(transport: WSTransport, data):
     try:
-        asyncio.run_coroutine_threadsafe(websocket.send(data), loop)
+        transport.send(WSMsgType.BINARY, data)
     except Exception as e:
         logging.debug(f"Error sending WebSocket data: {e}")
-
-async def websocket_recv(websocket: WebSocketCommonProtocol):
-    try:
-        msg = await websocket.recv()
-        return msg
-    except Exception as e:
-        logging.error(f"Error with WebSocket: {e}")
-        return None
 
 
 def try_port(port):
