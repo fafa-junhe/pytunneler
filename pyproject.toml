@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytunneler"
-version = "0.0.4"
+version = "0.1.0"
 description = "python udp and tcp tunnel"
 authors = ["fafa_junhe <junhefafa@gmail.com>"]
 license = "MIT"
@@ -20,7 +20,6 @@ pytest-asyncio = ">=0.23.2,<0.25.0"
 pytest-cov = ">=4.1,<6.0"
 pytest-httpserver = "^1.0.8"
 ruff = ">=0.1.8,<0.7.0"
-austin-dist == ">=3.0, <4.0"
 
 [build-system]
 requires = ["poetry-core"]
