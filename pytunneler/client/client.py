@@ -11,6 +11,7 @@ import argparse
 
 from pytunneler.utils import commands, network, packet, host_hex
 
+logging.getLogger().setLevel(logging.INFO)
 
 parser = argparse.ArgumentParser(description='pytunneler Websocket client')
 

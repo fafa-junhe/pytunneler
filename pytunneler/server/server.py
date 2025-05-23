@@ -4,8 +4,7 @@ import asyncio
 import asyncio.trsock
 import socket
 import time
-from aiohttp import WSCloseCode
-from picows import ws_create_server, WSFrame, WSTransport, WSListener, WSMsgType, WSUpgradeRequest
+from picows import ws_create_server, WSFrame, WSTransport, WSListener, WSMsgType, WSUpgradeRequest, WSCloseCode
 import threading
 import logging
 from queue import Queue

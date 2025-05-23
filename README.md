@@ -2,7 +2,7 @@
 
 ## server
 
-`python -m pytunneler.client.client --password SECRETPASSWORD 0.0.0.0:8321`
+`python -m pytunneler.server.server --password SECRETPASSWORD 0.0.0.0:8321`
 
 ## client
 

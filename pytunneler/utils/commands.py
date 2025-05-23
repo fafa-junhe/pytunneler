@@ -71,7 +71,7 @@ class LsPortCommand(Command):
         else:
             result.append(f"{start}-{end}")
 
-        return f"Available Ports: {" ".join(result)}"
+        return f'Available Ports: {" ".join(result)}'
 
 class TcpTunnelCommand(Command):
     def __init__(self):
