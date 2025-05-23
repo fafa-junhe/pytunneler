@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pytunneler"
-version = "0.1.0"
+version = "0.1.1"
 description = "python udp and tcp tunnel"
 authors = ["fafa_junhe <junhefafa@gmail.com>"]
 license = "MIT"
